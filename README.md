@@ -106,7 +106,7 @@ src/
 
 ## 🚀 Deployment
 
-    Deployed on Vercel: https://blog-py-rho.vercel.app/
+Deployed on Vercel: https://blog-py-rho.vercel.app/
 
 ## 🛣️ Roadmap
 
