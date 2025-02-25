@@ -7,57 +7,10 @@ import {
 	CardContent,
 	Avatar,
 } from "@mui/material";
-import { People, Speed, Security, Psychology } from "@mui/icons-material";
+
+import { features, team } from "../lib/api";
 
 const AboutPage = () => {
-	const features = [
-		{
-			icon: <People sx={{ fontSize: 40 }} />,
-			title: "Community Driven",
-			description:
-				"Built by the community, for the community. We value every contribution and perspective.",
-		},
-		{
-			icon: <Speed sx={{ fontSize: 40 }} />,
-			title: "Lightning Fast",
-			description:
-				"Optimized performance ensures you get the content you need, when you need it.",
-		},
-		{
-			icon: <Security sx={{ fontSize: 40 }} />,
-			title: "Secure Platform",
-			description:
-				"Your security is our priority. We implement the latest security measures.",
-		},
-		{
-			icon: <Psychology sx={{ fontSize: 40 }} />,
-			title: "Innovative Solutions",
-			description:
-				"Constantly evolving and improving to provide the best user experience.",
-		},
-	];
-
-	const team = [
-		{
-			name: "John Doe",
-			role: "Founder & CEO",
-			avatar: "/placeholder.svg?height=100&width=100",
-			bio: "Visionary leader with 15+ years of experience in digital innovation.",
-		},
-		{
-			name: "Jane Smith",
-			role: "Head of Content",
-			avatar: "/placeholder.svg?height=100&width=100",
-			bio: "Content strategist passionate about storytelling and user engagement.",
-		},
-		{
-			name: "Mike Johnson",
-			role: "Technical Lead",
-			avatar: "/placeholder.svg?height=100&width=100",
-			bio: "Full-stack developer with a keen eye for performance optimization.",
-		},
-	];
-
 	return (
 		<Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
 			{/* Hero Section */}
