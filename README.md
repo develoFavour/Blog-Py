@@ -84,7 +84,7 @@ src/
 └── App.js             # Main application component
 ```
 
-```
+
 
 ## 📱 Features Demo
 
