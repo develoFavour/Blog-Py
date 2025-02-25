@@ -4,10 +4,11 @@ import PropTypes from "prop-types";
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 	const handleChange = (event, value) => {
 		onPageChange(value);
-		// Scroll to top of posts section
-		document
-			.getElementById("posts-section")
-			.scrollIntoView({ behavior: "smooth" });
+
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	};
 
 	return (
@@ -27,6 +28,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 				size="large"
 				showFirstButton
 				showLastButton
+				siblingCount={1}
 			/>
 		</Box>
 	);

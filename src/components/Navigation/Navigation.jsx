@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
 	AppBar,
 	Toolbar,
@@ -23,24 +24,23 @@ const Navigation = () => {
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+	const navigate = useNavigate();
+	const location = useLocation();
 
 	const menuItems = [
-		{ label: "Home", href: "#home" },
-		{ label: "Posts", href: "#posts-section" },
-		{ label: "About", href: "#about" },
-		{ label: "Contact", href: "#contact" },
+		{ label: "Home", path: "/" },
+		{ label: "Posts", path: "/posts" },
+		{ label: "About", path: "/about" },
+		{ label: "Contact", path: "/contact" },
 	];
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
 
-	const scrollToSection = (href) => {
-		const element = document.querySelector(href);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
-			setMobileOpen(false);
-		}
+	const handleNavigation = (path) => {
+		navigate(path);
+		setMobileOpen(false);
 	};
 
 	const drawer = (
@@ -49,7 +49,8 @@ const Navigation = () => {
 				<ListItem
 					button
 					key={item.label}
-					onClick={() => scrollToSection(item.href)}
+					onClick={() => handleNavigation(item.path)}
+					selected={location.pathname === item.path}
 				>
 					<ListItemText primary={item.label} />
 				</ListItem>
@@ -67,7 +68,9 @@ const Navigation = () => {
 								display: "flex",
 								alignItems: "center",
 								flexGrow: 1,
+								cursor: "pointer",
 							}}
+							onClick={() => handleNavigation("/")}
 						>
 							<AutoStoriesIcon
 								sx={{
@@ -85,7 +88,7 @@ const Navigation = () => {
 									fontWeight: "bold",
 								}}
 							>
-								BlogPy
+								Blogpedia
 							</Typography>
 						</Box>
 
@@ -103,8 +106,28 @@ const Navigation = () => {
 								{menuItems.map((item) => (
 									<Button
 										key={item.label}
-										onClick={() => scrollToSection(item.href)}
+										onClick={() => handleNavigation(item.path)}
 										color="inherit"
+										sx={{
+											position: "relative",
+											"&::after": {
+												content: '""',
+												position: "absolute",
+												bottom: 0,
+												left: 0,
+												width: "100%",
+												height: "2px",
+												backgroundColor: "primary.main",
+												transform:
+													location.pathname === item.path
+														? "scaleX(1)"
+														: "scaleX(0)",
+												transition: "transform 0.3s ease-in-out",
+											},
+											"&:hover::after": {
+												transform: "scaleX(1)",
+											},
+										}}
 									>
 										{item.label}
 									</Button>

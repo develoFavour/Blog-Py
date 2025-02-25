@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Grid, Skeleton } from "@mui/material";
+
 import PostCard from "../PostCard/PostCard";
 
 const PostsGrid = ({ posts, loading, onPostClick }) => {
