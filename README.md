@@ -1,4 +1,4 @@
-# 📚 PostsViewer - Modern React Posts Platform
+# 📚 BlogPedia - Modern React Posts Platform
 
 A modern, responsive React application that provides an intuitive interface for browsing and interacting with posts from the JSONPlaceholder API. Built with Material-UI and featuring comprehensive search, filtering, and pagination capabilities.
 Deployed on Vercel: https://blog-py-rho.vercel.app/
@@ -84,8 +84,6 @@ src/
 └── App.js             # Main application component
 ```
 
-```
-
 ## 📱 Features Demo
 
 ### Search and Filter
@@ -113,6 +111,7 @@ src/
 ## 🛣️ Roadmap
 
 ### Additional features or improvements i'd like to implement if
+
 given more time.
 
 1. User Authentication
@@ -130,7 +129,4 @@ given more time.
    - Dark mode
    - Animation enhancements
 
-
-
 ## Developed by Favour Opia ❤️
-```
